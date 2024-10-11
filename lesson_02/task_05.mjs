@@ -4,12 +4,12 @@ import path from 'node:path';
 import url from 'node:url';
 
 const settingsFile = path.join(process.cwd(), 'settings.json');
-const historyFile = path.join(process.cwd(), 'history.json');
+const settings = await readSettings();
+const historyFile = path.join(process.cwd(), settings.historyFile);
 
 const server = createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
-  const settings = await readSettings();
 
   if (pathname === settings.historyRoute) {
     await serveHistory(res);
