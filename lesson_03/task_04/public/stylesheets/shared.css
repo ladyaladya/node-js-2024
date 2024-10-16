@@ -1,0 +1,88 @@
+@import url(fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url(reset.css);
+
+body {
+    overflow: hidden;
+    font-family: "ProximaNova", sans-serif;
+    color: #333333;
+    font-weight: 400;
+    background-color: #F8F8F8;
+    font-size: 16px;
+    background-color: #fdf0d5;
+}
+.wrapper {
+    min-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    flex-grow: 1;
+}
+.header {
+    height: 64px;
+}
+[class*="__container"] {
+    max-width: 1270px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container-header {
+    display: flex;
+    gap: 160px;
+    height: 100%;
+    align-items: center;
+}
+.logo-header {
+    color: #98c1a2;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Amatic SC', sans-serif;
+}
+.logo-header__link {
+}
+.nav-header {
+}
+.nav-header__list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.list-nav-header {
+}
+.list-nav-header__button {
+    padding: 8px 16px;
+    background-color: #98c1a2;
+    border-radius: 16px;
+    color: #ffffff ;
+}
+.list-nav-header__button:hover {
+    background-color: #7ba68f;
+}
+.list-nav-header__link:hover,
+.list-nav-footer__link:hover {
+    color: #7ba68f;
+    text-decoration: underline;
+}
+.footer {
+    height: 64px;
+}
+.footer__container {
+}
+.container-footer {
+    display: flex;
+    gap: 160px;
+    height: 100%;
+    align-items: center;
+}
+.container-footer__text {
+}
+.container-footer-nav {
+}
+.nav-container-footer {
+}
+.nav-container-footer__list {
+    display: flex;
+    gap: 32px;
+}
