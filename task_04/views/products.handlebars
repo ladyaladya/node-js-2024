@@ -1,0 +1,17 @@
+
+<h1>Наші продукти</h1>
+
+<div class="products-list">
+    {{#each products}}
+      <div class="product">
+        <h2>{{this.name}}</h2>
+        <p>Категорія: {{this.category}}</p>
+        <p>Ціна: {{this.price}} грн</p>
+        <p>Торгова марка: {{this.brand}}</p>
+        <p>Країна-виробник: {{this.country}}</p>
+        <p>Для тваринок: {{this.forPets}}</p>
+      </div>
+    {{else}}
+      <p>Немає доступних продуктів.</p>
+    {{/each}}
+  </div>
