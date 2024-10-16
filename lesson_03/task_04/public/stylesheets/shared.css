@@ -3,7 +3,6 @@
 @import url(reset.css);
 
 body {
-    overflow: hidden;
     font-family: "ProximaNova", sans-serif;
     color: #333333;
     font-weight: 400;
