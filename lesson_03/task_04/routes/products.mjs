@@ -5,11 +5,22 @@ export default function({ productService }) {
 
   router.get('/', (req, res) => {
     const products = productService.getAllProducts();
-    res.render('products', { metaTitle: 'Продукти - Магазин для домашніх тварин', products: products });
+    res.render('products/products-list',
+      { 
+        metaTitle: 'Продукти - Магазин для домашніх тварин',
+        products: products,
+        cssFilePath: 'products/products-list',
+      }
+    );
   });
 
   router.get('/add', (req, res) => {
-    res.render('add_product', { metaTitle: 'Додати продукт - Магазин для домашніх тварин' });
+    res.render('products/add-product',
+      { 
+        metaTitle: 'Додати продукт - Магазин для домашніх тварин',
+        cssFilePath: 'products/add-product',
+      }
+    );
   });
 
   router.post('/add', (req, res) => {

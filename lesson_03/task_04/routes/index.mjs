@@ -9,7 +9,7 @@ export default function({ absoluteStaticPath }) {
       { 
         metaTitle: 'Магазин для домашніх тварин',
         cssFilePath: 'home/index',
-      },
+      }
     );
   });
 
