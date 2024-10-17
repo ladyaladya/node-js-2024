@@ -1,17 +1,37 @@
-
-<h1>Наші продукти</h1>
-
-<div class="products-list">
-    {{#each products}}
-      <div class="product">
-        <h2>{{this.name}}</h2>
-        <p>Категорія: {{this.category}}</p>
-        <p>Ціна: {{this.price}} грн</p>
-        <p>Торгова марка: {{this.brand}}</p>
-        <p>Країна-виробник: {{this.country}}</p>
-        <p>Для тваринок: {{this.forPets}}</p>
-      </div>
-    {{else}}
-      <p>Немає доступних продуктів.</p>
-    {{/each}}
+<section class="products-list-section">
+  <div class="products-list__container container-products container-products--margin">
+    <h1 class="container-products__title">
+      Наші продукти
+    </h1>
+    <ul class="container-products__list list-products">
+      {{#each products}}
+        <li class="list-products__item item-product">
+          <a href="/products/{{this.id}}" class="item-product__link">
+            <h2 class="item-product__title item-product__title--margin">
+              {{this.name}}
+            </h2>
+            <p class="item-product__text">
+              Категорія: {{this.category}}
+            </p>
+            <p class="item-product__text">
+              Торгова марка: {{this.brand}}
+            </p>
+            <p class="item-product__text">
+              Країна-виробник: {{this.country}}
+            </p>
+            <p class="item-product__text item-product__text--margin">
+              Для тваринок: {{this.forPets}}
+            </p>
+            <p class="item-product__text">
+              Ціна: <span class="bold">{{this.price}} грн</span>
+            </p>
+          </a>
+        </li>
+      {{else}}
+        <li class="list-products__item--empty-list">
+          Немає доступних продуктів.
+        </li>
+      {{/each}}
+    </ul>
   </div>
+</section>

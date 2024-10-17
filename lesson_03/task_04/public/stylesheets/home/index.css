@@ -48,6 +48,7 @@
     margin: 0 0 16px 0;
 }
 .list-nav-hero__link {
+    transition: 0.2s ease;
 }
 .list-nav-hero__link:hover {
     color: #7ba68f;
@@ -58,6 +59,7 @@
     background-color: #98c1a2;
     border-radius: 16px;
     color: #ffffff ;
+    transition: 0.2s ease;
 }
 .nav-hero__button:hover {
     background-color: #7ba68f;
