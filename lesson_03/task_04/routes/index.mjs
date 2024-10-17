@@ -5,7 +5,7 @@ export default function({ absoluteStaticPath }) {
   const router = Router();
 
   router.get('/', (req, res) => {
-    res.render('home', { metaTitle: 'Магазин для домашніх тварин' });
+    res.render('home/index', { metaTitle: 'Магазин для домашніх тварин' });
   });
 
   router.get('/about', (req, res) => {
