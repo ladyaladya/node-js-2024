@@ -1,3 +1,5 @@
+// Задача 2. Розробити серверну частину додатку, який за відповідними маршрутами (“/”, “/coffee”, “/music”) повертає створені HTML документи.
+
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
