@@ -9,8 +9,8 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import homeRoutes from './routes/home.mjs';
-import productRoutes from './routes/products.mjs';
+import homeRouter from './routes/home.mjs';
+import productRouter from './routes/products.mjs';
 
 const app = express();
 app.engine('hbs', engine({
@@ -30,8 +30,8 @@ app.use('/static', express.static(absoluteStaticPath, {
   etag: true
 }));
 
-app.use('/', homeRoutes);
-app.use('/products', productRoutes);
+app.use('/', homeRouter);
+app.use('/products', productRouter);
 
 app.use((req, res) => {
   res.status(404).send('Page not found');
