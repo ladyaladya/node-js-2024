@@ -15,13 +15,26 @@ class ProductsController {
   static renderAddProductForm(req, res) {
     res.render('products/add-product', { 
       metaTitle: 'Додати продукт - Магазин для домашніх тварин',
-      cssFilePath: 'products/add-product',
+      cssFilePath: 'products/add-product', 
     });
   }
 
   static async addProduct(req, res) {
     await ProductsController.productModel.add(req.body);
     res.redirect('/products');
+  }
+
+  static async renderProductDetails(req, res) {
+    const productId = parseInt(req.params.productId);
+    const product = await ProductsController.productModel.getById(productId);
+    if (!product) {
+      return res.status(404).send('Product not found');
+    }
+    res.render('products/product-details', {
+      metaTitle: `${product.name}`,
+      product,
+      cssFilePath: 'products/product-details',
+    });
   }
 }
 

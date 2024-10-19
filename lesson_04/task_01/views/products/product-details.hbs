@@ -1,0 +1,26 @@
+<section class="product-item">
+  <div class="product-item__container">
+      <div class="product-item__details details-item">
+          <h1 class="product-item__title">
+            {{product.name}}
+          </h1>
+          <img src="/static/images/products/storage/{{product.imagePath}}" alt="{{product.name}}" class="item-product__image item-product__image--margin">
+          <p class="item-product__text">
+            Категорія: {{product.category}}
+          </p>
+          <p class="item-product__text">
+            Торгова марка: {{product.brand}}
+          </p>
+          <p class="item-product__text">
+            Країна-виробник: {{product.country}}
+          </p>
+          <p class="item-product__text item-product__text--margin">
+            Для тваринок: {{product.forPets}}
+          </p>
+          <p class="item-product__text">
+            Ціна: <span class="bold">{{product.price}} грн</span>
+          </p>
+      </div>
+  </div>
+
+</section>
