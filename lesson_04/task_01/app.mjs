@@ -9,9 +9,8 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import indexRoutes from './routes/index.mjs';
+import homeRoutes from './routes/home.mjs';
 import productRoutes from './routes/products.mjs';
-import InMemoryProductService from './services/products-service.mjs';
 
 const app = express();
 app.engine('hbs', engine({
@@ -31,9 +30,8 @@ app.use('/static', express.static(absoluteStaticPath, {
   etag: true
 }));
 
-app.use('/', indexRoutes({ absoluteStaticPath }));
-
-app.use('/products', productRoutes({ productService: new InMemoryProductService() }));
+app.use('/', homeRoutes);
+app.use('/products', productRoutes);
 
 app.use((req, res) => {
   res.status(404).send('Page not found');

@@ -1,0 +1,40 @@
+.about-section {
+    padding: 80px 0;
+}
+.container-about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-about__description {
+    max-width: 560px;
+}
+.description-about--margin>*:not(:last-child) {
+    margin: 0 0 16px 0;
+}
+.description-about__title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+}
+h2 {
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 16px 0
+}
+.pets-image {
+    margin: 32px 0;
+}
+p{
+    margin-bottom: 8px;
+}
+img {
+    max-width: 100%;
+}

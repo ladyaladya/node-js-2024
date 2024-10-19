@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Сухий корм для котів",
+    "category": "Корм",
+    "price": 300,
+    "brand": "Optimeal",
+    "country": "Україна",
+    "forPets": "Для дорослих котів",
+    "imagePath": "optimeal.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Optimeal Cat Mix",
+    "category": "Вологий корм",
+    "price": 98,
+    "brand": "Optimeal",
+    "country": "Україна",
+    "forPets": "Для дорослих котів, Для котів похилого віку",
+    "imagePath": "group-optimeal.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Rigor Cat Наповнювач",
+    "category": "Наповнювачі для туалету",
+    "price": 399,
+    "brand": "Rigor",
+    "country": "Туреччина",
+    "forPets": "Для котів",
+    "imagePath": "rigor.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Josera JosiDog",
+    "category": "Сухий корм",
+    "price": 1109,
+    "brand": "Josera",
+    "country": "Німеччина",
+    "forPets": "Для дорослих собак, Для собак похилого віку",
+    "imagePath": "josera.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Trixie м'ячик",
+    "category": "Іграшки",
+    "price": 120,
+    "brand": "Trixie",
+    "country": "Німеччина, Китай",
+    "forPets": "Для собак",
+    "imagePath": "ball.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Beaphar Care+",
+    "category": "Корм",
+    "price": 554,
+    "brand": "Beaphar",
+    "country": "Нідерланди",
+    "forPets": "Для кроликів",
+    "imagePath": "beaphar-care.jpg"
+  }
+]
