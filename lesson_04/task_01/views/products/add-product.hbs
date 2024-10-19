@@ -1,36 +1,40 @@
 
-<h1>Додати продукт</h1>
+<section class="add-product-section">
+  <div class="product-form__container container-product-form">
+    <h1 class="container-product-form__title">Новий продукт</h1>
+    <form class="container-product-form__form form-products" action="/products/add" method="POST">
+        <div class="form-group">
+          <label for="name">Назва продукту:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
- <form action="/products/add" method="POST">
-      <div class="form-group">
-        <label for="name">Назва продукту:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
+        <div class="form-group">
+          <label for="category">Категорія:</label>
+          <input type="text" id="category" name="category" required>
+        </div>
 
-      <div class="form-group">
-        <label for="category">Категорія:</label>
-        <input type="text" id="category" name="category" required>
-      </div>
+        <div class="form-group">
+          <label for="price">Ціна:</label>
+          <input type="number" id="price" name="price" required>
+        </div>
 
-      <div class="form-group">
-        <label for="price">Ціна:</label>
-        <input type="number" id="price" name="price" required>
-      </div>
+        <div class="form-group">
+          <label for="brand">Торгова марка:</label>
+          <input type="text" id="brand" name="brand" required>
+        </div>
 
-      <div class="form-group">
-        <label for="brand">Торгова марка:</label>
-        <input type="text" id="brand" name="brand" required>
-      </div>
+        <div class="form-group">
+          <label for="country">Країна-виробник:</label>
+          <input type="text" id="country" name="country" required>
+        </div>
 
-      <div class="form-group">
-        <label for="country">Країна-виробник:</label>
-        <input type="text" id="country" name="country" required>
-      </div>
+        <div class="form-group">
+          <label for="forPets">Для яких тваринок:</label>
+          <input type="text" id="forPets" name="forPets" required>
+        </div>
 
-      <div class="form-group">
-        <label for="forPets">Для яких тваринок:</label>
-        <input type="text" id="forPets" name="forPets" required>
-      </div>
-
-      <button type="submit">Додати продукт</button>
+        <button class="form-button" type="submit">Додати продукт</button>
     </form>
+  </div>
+</section>
+
