@@ -7,7 +7,7 @@
       {{#each products}}
         <li class="list-products__item item-product">
           <a href="/products/{{this.id}}" class="item-product__link">
-            <img src="/static/images/products/{{this.imagePath}}" alt="{{this.brand}}" class="item-product__image item-product__image--margin">
+            <img src="/static/{{this.imagePath}}" alt="{{this.brand}}" class="item-product__image item-product__image--margin">
             <h2 class="item-product__title item-product__title--margin">
               {{this.brand}} {{this.model}}
             </h2>

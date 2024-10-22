@@ -41,3 +41,10 @@ button {
 button:hover {
   background-color: #2E5F85;
 }
+.form-products__image {
+  max-width: 100%;
+  max-height: 400px;
+}
+.hidden {
+  display: none;
+}

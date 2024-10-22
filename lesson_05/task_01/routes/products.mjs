@@ -1,11 +1,26 @@
 import { Router } from 'express';
+import multer from 'multer';
 import ProductsController from '../controllers/products-controller.mjs';
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+      const uniqueId = uuidv4();
+      const extension = path.extname(file.originalname);
+      cb(null, `${uniqueId}${extension}`);
+  }
+});
+
+const upload = multer({ storage });
 const router = Router();
 
 router.get('/', ProductsController.renderProductsList);
 router.get('/add', ProductsController.renderAddProductForm);
-router.post('/add', ProductsController.addProduct);
+router.post('/add', upload.single('photo'), ProductsController.addProduct);
 router.post('/remove/:productId', ProductsController.removeProduct);
 router.get('/:productId', ProductsController.renderProductDetails);
 

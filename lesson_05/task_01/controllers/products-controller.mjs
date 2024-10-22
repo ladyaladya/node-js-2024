@@ -20,7 +20,8 @@ class ProductsController {
   }
 
   static async addProduct(req, res) {
-    await ProductsController.productModel.add(req.body);
+    const product = { imagePath: req.file.filename, ...req.body };
+    await ProductsController.productModel.add(product);
     res.redirect('/products');
   }
 

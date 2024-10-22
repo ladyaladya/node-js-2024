@@ -25,10 +25,10 @@ const __fileName = fileURLToPath(import.meta.url);
 const __dirName = path.dirname(__fileName);
 app.set('views', path.join(__dirName, 'views'));
 
-const absoluteStaticPath = path.join(__dirName, 'public');
-app.use('/static', express.static(absoluteStaticPath, {
-  etag: true
-}));
+const absolutePublicStaticPath = path.join(__dirName, 'public');
+const absoluteUploadsStaticPath = path.join(__dirName, 'uploads');
+app.use('/static', express.static(absolutePublicStaticPath, { etag: true }));
+app.use('/static', express.static(absoluteUploadsStaticPath, { etag: true }));
 
 app.use('/', homeRouter);
 app.use('/products', productRouter);
