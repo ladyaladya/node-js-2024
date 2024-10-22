@@ -1,9 +1,11 @@
-// Задача. За прикладом, який ми розглянули на уроці розробити додаток з такими операціями стосовно контексту, який ви виберете:
-// відображення списку елементів
-// відображення детальної інформації про елемент маючи id
-// додавання нового елемента
-// потім додамо редагування
-// потім додамо видалення
+// Задача 1. Розробити додаток для автопарку (марка авто, рік випуску, номер, зображення) з такими функціональними можливостями:
+// 1)додавання транспортного засобу
+// 2)редагування
+// 3)видалення
+// 4)виведення списку
+// Також є статичні сторінки:
+// Home
+// about
 
 import express from 'express';
 import { engine } from 'express-handlebars';
@@ -11,6 +13,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import homeRouter from './routes/home.mjs';
 import productRouter from './routes/products.mjs';
+import methodOverride from 'method-override';
 
 const app = express();
 app.engine('hbs', engine({
@@ -20,6 +23,8 @@ app.engine('hbs', engine({
 }));
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 const __fileName = fileURLToPath(import.meta.url);
 const __dirName = path.dirname(__fileName);

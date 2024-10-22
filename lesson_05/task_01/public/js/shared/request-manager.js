@@ -11,20 +11,6 @@ class RequestManager {
     return data;
   }
 
-  static async deleteRequest(route, body) {
-    const response = await fetch(route, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    })
-    const data = await response.json();
-    // Оновлення поточного вікна без використання кешу
-    window.location.reload(true);
-    return data;
-  }
-
   static handleFileSelect(event, imgSelector) {
     const file = event.target.files[0];
     if (file && file.type.startsWith('image/')) {

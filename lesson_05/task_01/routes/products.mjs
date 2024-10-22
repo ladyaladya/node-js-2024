@@ -21,7 +21,9 @@ const router = Router();
 router.get('/', ProductsController.renderProductsList);
 router.get('/add', ProductsController.renderAddProductForm);
 router.post('/add', upload.single('photo'), ProductsController.addProduct);
-router.post('/remove/:productId', ProductsController.removeProduct);
+router.get('/edit/:productId', ProductsController.renderEditProductForm);
+router.put('/edit', upload.single('photo'), ProductsController.updateProduct);
+router.delete('/', ProductsController.removeProduct);
 router.get('/:productId', ProductsController.renderProductDetails);
 
 export default router;

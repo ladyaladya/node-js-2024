@@ -1,0 +1,43 @@
+
+<section class="add-product-section">
+  <div class="product-form__container container-product-form">
+    <h1 class="container-product-form__title">Транспорт - {{product.brand}} {{product.model}}</h1>
+    <form class="container-product-form__form form-products" action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{product.id}}">
+        
+        <div class="form-group">
+          <label for="brand">Марка:</label>
+          <input value="{{product.brand}}" type="text" id="brand" name="brand" minlength="1" maxlength="30" required> 
+        </div>
+
+        <div class="form-group">
+          <label for="model">Модель:</label>
+          <input value="{{product.model}}" type="text" id="model" name="model" minlength="1" maxlength="30" required>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Рік випуску:</label>
+          <input value="{{product.year}}" type="number" id="year" name="year" min="1900" max="2024" required>
+        </div>
+
+        <div class="form-group">
+          <label for="number">Номер:</label>
+          <input value="{{product.number}}" type="text" id="number" name="number" minlength="4" maxlength="10" required>
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Фото:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" onchange="RequestManager.handleFileSelect(event, '#uploaded-image')">
+        </div>
+
+        {{#if product.imagePath}}
+          <img id="uploaded-image" name="uploaded-image" class="form-products__image" src="/static/{{product.imagePath}}" alt="Фото продукту">
+        {{else}}
+          <img id="uploaded-image" name="uploaded-image" class="form-products__image hidden" alt="Фото продукту">
+        {{/if}}
+
+        <button class="form-button" type="submit">Оновини транспорт</button>
+    </form>
+  </div>
+</section>
+

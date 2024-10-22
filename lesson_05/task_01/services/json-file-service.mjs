@@ -34,7 +34,8 @@ class JsonFileService {
 
   async add(item) {
     const data = await this._readDataFromFile();
-    item.id = data.length + 1;
+    const maxId = data.length > 0 ? Math.max(...data.map(item => item.id)) : 0;
+    item.id = maxId + 1;
     data.push(item);
     await this._writeDataToFile(data);
     return item;
@@ -43,12 +44,15 @@ class JsonFileService {
   async update(id, updatedItem) {
     const data = await this._readDataFromFile();
     const index = data.findIndex(item => item.id === id);
+    
     if (index !== -1) {
-      data[index] = { ...data[index], ...updatedItem };
+      const updatedData = { ...data[index], ...updatedItem, id: data[index].id };
+      data[index] = updatedData;
+  
       await this._writeDataToFile(data);
-      return data[index];
+      return updatedData;
     }
-    return null;
+    throw Error('Failed to update product.');
   }
 
   async delete(id) {
@@ -59,7 +63,7 @@ class JsonFileService {
       await this._writeDataToFile(data);
       return deletedItem[0];
     }
-    return null;
+    throw Error('Failed to delete product.');
   }
 }
 

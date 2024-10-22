@@ -20,20 +20,44 @@ class ProductsController {
   }
 
   static async addProduct(req, res) {
-    const product = { imagePath: req.file.filename, ...req.body };
+    const product = req.body;
+    if (req.file) {
+      product['imagePath'] = req.file.filename;
+    };
     await ProductsController.productModel.add(product);
-    res.redirect('/products');
+    res.redirect(`/products/?message=${product.brand} успішно додано.`);
   }
 
-  static async removeProduct(req, res) {
+  static async renderEditProductForm(req, res) {
     const productId = parseInt(req.params.productId);
     const product = await ProductsController.productModel.getById(productId);
     if (!product) {
       return res.status(404).send('Product not found');
     }
+    res.render('products/edit-product', {
+      product,
+      metaTitle: 'Оновити продукт - Магазин для домашніх тварин',
+      cssFilePath: 'products/edit-product', 
+    });
+  }
+
+  static async updateProduct(req, res) {
+    const product = req.body;
+    if (req.file) {
+      product['imagePath'] = req.file.filename;
+    };
+    await ProductsController.productModel.update(parseInt(product.id), product);
+    res.redirect('/products');
+  }
+
+  static async removeProduct(req, res) {
+    const productId = req.body.id;
+    if (!productId) {
+      return res.status(404).send('Product not found');
+    }
     
     await ProductsController.productModel.delete(productId);
-    res.redirect('/products');
+    res.status(200).send('Operation successful');
   }
 
   static async renderProductDetails(req, res) {
