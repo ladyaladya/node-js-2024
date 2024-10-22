@@ -50,16 +50,18 @@
   font-size: 20px;
   text-align: center;
 }
-.item-product__image {
+.item-product__link .item-product__image {
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
   max-height: 200px;
 }
-.item-product__link .item-product__image--margin {
+.item-product__link {
   margin: 0 0 16px 0;
 }
 .item-product__link .item-product__title--margin,
 .item-product__link .item-product__text--margin {
-  margin: 0 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 .item-product__text {
 }
