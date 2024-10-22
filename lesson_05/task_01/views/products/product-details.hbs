@@ -4,7 +4,11 @@
           <h1 class="product-item__title">
             {{product.brand}} {{product.model}}
           </h1>
-          <img src="/static/{{product.imagePath}}" alt="{{product.brand}}" class="item-product__image">
+          {{#if product.imagePath}}
+            <img src="/static/{{product.imagePath}}" alt="{{product.brand}}" class="item-product__image">
+          {{else}}
+            <img src="/static/images/products/no-image.png" alt="Фото відсутнє" class="item-product__image">
+          {{/if}}
           <p class="item-product__text">
             Марка: {{product.brand}}
           </p>
@@ -20,7 +24,7 @@
       </div>
       <div class="product-item__actions actions-product">
         <a class="actions-product__button button--edit" href="/products/edit/{{product.id}}">Редагувати</a>
-        <button class="actions-product__button button--delete" type="button" onclick="handleOnDeleteClick({{product.id}})" >Видалити</button>
+        <button class="actions-product__button button--delete" type="button" onclick="RequestManager.handleOnDeleteClick({{product.id}})" >Видалити</button>
       </div>
   </div>
 

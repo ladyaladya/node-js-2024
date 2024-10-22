@@ -47,7 +47,7 @@ class ProductsController {
       product['imagePath'] = req.file.filename;
     };
     await ProductsController.productModel.update(parseInt(product.id), product);
-    res.redirect('/products');
+    res.redirect(`/products/?message=${product.brand} успішно оновлено.`);
   }
 
   static async removeProduct(req, res) {

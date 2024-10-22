@@ -36,10 +36,10 @@ button, [class*="__button"] {
   margin: 0 16px 0 0;
 }
 .button--edit {
-  background-color: #8fc1c1;
+  background-color: #3A7CA5;
 }
 .button--edit:hover {
-  background-color: #72a6a6;
+  background-color: #2E5F85;
 }
 .button--delete {
   background-color: #e57373;
