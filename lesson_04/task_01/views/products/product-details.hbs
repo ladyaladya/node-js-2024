@@ -4,7 +4,7 @@
           <h1 class="product-item__title">
             {{product.name}}
           </h1>
-          <img src="/static/images/products/storage/{{product.imagePath}}" alt="{{product.name}}" class="item-product__image item-product__image--margin">
+          <img src="/static/images/products/storage/{{product.imagePath}}" alt="{{product.name}}" class="item-product__image">
           <p class="item-product__text">
             Категорія: {{product.category}}
           </p>
@@ -20,6 +20,10 @@
           <p class="item-product__text">
             Ціна: <span class="bold">{{product.price}} грн</span>
           </p>
+      </div>
+      <div class="product-item__actions actions-product">
+        <button class="actions-product__button button--edit" type="button">Редагувати</button>
+        <button class="actions-product__button button--delete" type="button">Видалити</button>
       </div>
   </div>
 

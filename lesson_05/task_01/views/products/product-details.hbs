@@ -1,0 +1,27 @@
+<section class="product-item">
+  <div class="product-item__container">
+      <div class="product-item__details details-item">
+          <h1 class="product-item__title">
+            {{product.brand}} {{product.model}}
+          </h1>
+          <img src="/static/images/products/{{product.imagePath}}" alt="{{product.brand}}" class="item-product__image">
+          <p class="item-product__text">
+            Марка: {{product.brand}}
+          </p>
+          <p class="item-product__text">
+            Модель: {{product.model}}
+          </p>
+          <p class="item-product__text">
+            Рік випуску: {{product.year}}
+          </p>
+          <p class="item-product__text item-product__text--margin">
+            Номер: {{product.number}}
+          </p>
+      </div>
+      <div class="product-item__actions actions-product">
+        <button class="actions-product__button button--edit" type="button">Редагувати</button>
+        <button class="actions-product__button button--delete" type="button">Видалити</button>
+      </div>
+  </div>
+
+</section>

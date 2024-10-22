@@ -24,6 +24,17 @@ class ProductsController {
     res.redirect('/products');
   }
 
+  static async removeProduct(req, res) {
+    const productId = parseInt(req.params.productId);
+    const product = await ProductsController.productModel.getById(productId);
+    if (!product) {
+      return res.status(404).send('Product not found');
+    }
+    
+    await ProductsController.productModel.delete(productId);
+    res.redirect('/products');
+  }
+
   static async renderProductDetails(req, res) {
     const productId = parseInt(req.params.productId);
     const product = await ProductsController.productModel.getById(productId);

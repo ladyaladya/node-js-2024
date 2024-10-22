@@ -1,0 +1,16 @@
+{
+  "name": "homework_3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node task_01.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1"
+  }
+}

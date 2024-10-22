@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2020,
+    "number": "AA1234BB",
+    "imagePath": "toyota-corolla.webp"
+  },
+  {
+    "id": 2,
+    "brand": "BMW",
+    "model": "X5",
+    "year": 2019,
+    "number": "BB5678CC",
+    "imagePath": "bmw-x5.webp"
+  },
+  {
+    "id": 3,
+    "brand": "Audi",
+    "model": "A4",
+    "year": 2021,
+    "number": "CC9012DD",
+    "imagePath": "audi-a4.webp"
+  },
+  {
+    "id": 4,
+    "brand": "Volkswagen",
+    "model": "Passat",
+    "year": 2022,
+    "number": "DD3456EE",
+    "imagePath": "volkswagen-passat.webp"
+  },
+  {
+    "id": 5,
+    "brand": "Mercedes-Benz",
+    "model": "E-Class",
+    "year": 2018,
+    "number": "EE7890FF",
+    "imagePath": "mercedes-benz.webp"
+  },
+  {
+    "id": 6,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2023,
+    "number": "FF1234GG",
+    "imagePath": "ford-focus.webp"
+  },
+  {
+    "brand": "аві",
+    "model": "аіваві",
+    "year": "432",
+    "number": "432342аві",
+    "id": 7
+  }
+]
