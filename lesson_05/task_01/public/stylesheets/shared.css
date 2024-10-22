@@ -72,9 +72,10 @@ body {
 }
 .container-footer {
     display: flex;
-    gap: 160px;
+    gap: 60px;
     height: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 .container-footer__text {
 }
