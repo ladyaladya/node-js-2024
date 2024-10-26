@@ -48,3 +48,11 @@ button:hover {
 .hidden {
   display: none;
 }
+.container-product-form__error-messages {
+  margin: 0 0 32px 0;
+  color: #e57373;
+  text-align: center;
+}
+.container-product-form__error-messages li {
+  margin: 0 0 16px 0;
+}

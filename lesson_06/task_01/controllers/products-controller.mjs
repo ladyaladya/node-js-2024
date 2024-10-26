@@ -1,4 +1,5 @@
 import Product from '../models/product.mjs';
+import { validationResult } from 'express-validator';
 
 class ProductsController {
   static productModel = new Product();
@@ -20,6 +21,16 @@ class ProductsController {
   }
 
   static async addProduct(req, res) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/add-product', {
+        errors: errors.array(),
+        oldData: req.body,
+        metaTitle: 'Додати продукт - Магазин для домашніх тварин',
+        cssFilePath: 'products/add-product', 
+      });
+    }
+    
     const product = req.body;
     if (req.file) {
       product['imagePath'] = req.file.filename;
@@ -42,10 +53,20 @@ class ProductsController {
   }
 
   static async updateProduct(req, res) {
+    const errors = validationResult(req);
     const product = req.body;
     if (req.file) {
       product['imagePath'] = req.file.filename;
     };
+    if (!errors.isEmpty()) {
+      return res.render('products/edit-product', {
+        errors: errors.array(),
+        product,
+        metaTitle: 'Оновити продукт - Магазин для домашніх тварин',
+        cssFilePath: 'products/edit-product', 
+      });
+    }
+
     await ProductsController.productModel.update(parseInt(product.id), product);
     res.redirect(`/products/?message=${product.brand} успішно оновлено.`);
   }

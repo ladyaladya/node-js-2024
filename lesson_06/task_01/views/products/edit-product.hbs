@@ -2,6 +2,17 @@
 <section class="add-product-section">
   <div class="product-form__container container-product-form">
     <h1 class="container-product-form__title">Транспорт - {{product.brand}} {{product.model}}</h1>
+
+    {{#if errors}}
+      <div class="container-product-form__error-messages">
+        <ul>
+          {{#each errors}}
+            <li>{{this.msg}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
     <form class="container-product-form__form form-products" action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="{{product.id}}">
         
@@ -36,7 +47,7 @@
           <img id="uploaded-image" name="uploaded-image" class="form-products__image hidden" alt="Фото продукту">
         {{/if}}
 
-        <button class="form-button" type="submit">Оновини</button>
+        <button class="form-button" type="submit">Оновити</button>
     </form>
   </div>
 </section>

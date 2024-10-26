@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
 import ProductsController from '../controllers/products-controller.mjs';
+import ProductValidation from '../models/product-validation.mjs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -20,9 +21,18 @@ const router = Router();
 
 router.get('/', ProductsController.renderProductsList);
 router.get('/add', ProductsController.renderAddProductForm);
-router.post('/add', upload.single('photo'), ProductsController.addProduct);
+router.post(
+  '/add',
+  upload.single('photo'),
+  ProductValidation.addProductValidation(),
+  ProductsController.addProduct
+);
 router.get('/edit/:productId', ProductsController.renderEditProductForm);
-router.put('/edit', upload.single('photo'), ProductsController.updateProduct);
+router.put('/edit', 
+  upload.single('photo'),
+  ProductValidation.addProductValidation(),
+  ProductsController.updateProduct
+);
 router.delete('/', ProductsController.removeProduct);
 router.get('/:productId', ProductsController.renderProductDetails);
 
