@@ -1,0 +1,92 @@
+@import url(fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(reset.css);
+
+body {
+    font-family: "ProximaNova", sans-serif;
+    color: #333333;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #E0E0E0;
+}
+body.swal2-height-auto{
+    height: 100%  !important;
+}
+.wrapper {
+    min-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    flex-grow: 1;
+}
+.header {
+    height: 64px;
+}
+[class*="__container"] {
+    max-width: 1270px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container-header {
+    display: flex;
+    gap: 64px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-header {
+    color: #3A7CA5;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Amatic SC', sans-serif;
+}
+.logo-header__link {
+}
+.nav-header {
+}
+.nav-header__list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.list-nav-header {
+}
+.list-nav-header__button {
+    padding: 12px 32px 10px;
+    border-radius: 40px;
+    background-color: #3A7CA5;
+    color: #ffffff ;
+    text-transform: uppercase;
+}
+.list-nav-header__button:hover {
+    background-color: #2E5F85;
+}
+.list-nav-header__link:hover,
+.list-nav-footer__link:hover {
+    color: #3A7CA5;
+    text-decoration: underline;
+}
+.footer {
+    height: 64px;
+}
+.footer__container {
+}
+.container-footer {
+    display: flex;
+    gap: 60px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-footer__text {
+}
+.container-footer-nav {
+}
+.nav-container-footer {
+}
+.nav-container-footer__list {
+    display: flex;
+    gap: 32px;
+}
