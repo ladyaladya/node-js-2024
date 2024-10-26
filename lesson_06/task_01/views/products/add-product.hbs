@@ -16,7 +16,6 @@
     <form class="container-product-form__form form-products" action="/products/add" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="brand">Марка:</label>
-          <input type="text" id="brand" name="brand">
           <input type="text" id="brand" name="brand" minlength="1" maxlength="30" value="{{oldData.brand}}" required>
         </div>
 
