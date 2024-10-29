@@ -1,11 +1,9 @@
-import Product from '../models/product.mjs';
+import ProductsDBService from './../services/product-db-service.mjs';
 import { validationResult } from 'express-validator';
 
 class ProductsController {
-  static productModel = new Product();
-
   static async renderProductsList(req, res) {
-    const products = await ProductsController.productModel.getAll();
+    const products = (await ProductsDBService.getList()).map(product => product.toObject());
     res.render('products/products-list', { 
       metaTitle: 'Продукти - Магазин для домашніх тварин',
       products: products,
@@ -30,23 +28,23 @@ class ProductsController {
         cssFilePath: 'products/add-product', 
       });
     }
-    
+
     const product = req.body;
     if (req.file) {
       product['imagePath'] = req.file.filename;
-    };
-    await ProductsController.productModel.add(product);
+    }
+    await ProductsDBService.create(product);
     res.redirect(`/products/?message=${product.brand} успішно додано.`);
   }
 
   static async renderEditProductForm(req, res) {
-    const productId = parseInt(req.params.productId);
-    const product = await ProductsController.productModel.getById(productId);
+    const productId = req.params.productId;
+    const product = await ProductsDBService.getById(productId);
     if (!product) {
       return res.status(404).send('Product not found');
     }
     res.render('products/edit-product', {
-      product,
+      product: product.toObject(),
       metaTitle: 'Оновити продукт - Магазин для домашніх тварин',
       cssFilePath: 'products/edit-product', 
     });
@@ -57,7 +55,7 @@ class ProductsController {
     const product = req.body;
     if (req.file) {
       product['imagePath'] = req.file.filename;
-    };
+    }
     if (!errors.isEmpty()) {
       return res.render('products/edit-product', {
         errors: errors.array(),
@@ -67,7 +65,7 @@ class ProductsController {
       });
     }
 
-    await ProductsController.productModel.update(parseInt(product.id), product);
+    await ProductsDBService.update(product._id, product);
     res.redirect(`/products/?message=${product.brand} успішно оновлено.`);
   }
 
@@ -77,19 +75,19 @@ class ProductsController {
       return res.status(404).send('Product not found');
     }
     
-    await ProductsController.productModel.delete(productId);
+    await ProductsDBService.deleteById(productId);
     res.status(200).send('Operation successful');
   }
 
   static async renderProductDetails(req, res) {
-    const productId = parseInt(req.params.productId);
-    const product = await ProductsController.productModel.getById(productId);
+    const productId = req.params.productId;
+    const product = await ProductsDBService.getById(productId);
     if (!product) {
       return res.status(404).send('Product not found');
     }
     res.render('products/product-details', {
       metaTitle: `${product.brand} ${product.model}`,
-      product,
+      product: product.toObject(),
       cssFilePath: 'products/product-details',
     });
   }

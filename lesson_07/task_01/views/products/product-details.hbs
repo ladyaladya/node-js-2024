@@ -23,8 +23,8 @@
           </p>
       </div>
       <div class="product-item__actions actions-product">
-        <a class="actions-product__button button--edit" href="/products/edit/{{product.id}}">Редагувати</a>
-        <button class="actions-product__button button--delete" type="button" onclick="RequestManager.handleOnDeleteClick({{product.id}})" >Видалити</button>
+        <a class="actions-product__button button--edit" href="/products/edit/{{product._id}}">Редагувати</a>
+        <button class="actions-product__button button--delete" type="button" onclick="RequestManager.handleOnDeleteClick('{{product._id}}')" >Видалити</button>
       </div>
   </div>
 

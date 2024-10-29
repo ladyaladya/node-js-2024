@@ -6,7 +6,7 @@
     <ul class="container-products__list list-products">
       {{#each products}}
         <li class="list-products__item item-product">
-          <a href="/products/{{this.id}}" class="item-product__link">
+          <a href="/products/{{this._id}}" class="item-product__link">
             {{#if this.imagePath}}
               <img src="/static/{{this.imagePath}}" alt="{{this.brand}}" class="item-product__image item-product__image--margin">
             {{else}}
